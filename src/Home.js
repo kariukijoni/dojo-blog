@@ -6,7 +6,7 @@ export default function Home() {
     const [blogs,setBlogs]=useState([
         {title:'my first blog',body:'Lorem ipsum',author:'jakes',id:1},
         {title:'my second blog',body:'Lorem ipsum',author:'Jared',id:2},
-        {title:'my third blog',body:'Lorem ipsum',author:'jats',id:3}
+        {title:'my third blog',body:'Lorem ipsum',author:'jakes',id:3}
     ])
     
         
@@ -14,6 +14,8 @@ export default function Home() {
     <div className='home'>
         
         <BlogList blogs={blogs} title='All Blogs'/>
+        
+        <BlogList blogs={blogs.filter((blog)=>blog.author==='jakes')} title="Mario's Blog"/>
     
     </div>
   )
