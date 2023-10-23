@@ -9,13 +9,18 @@ export default function Home() {
         {title:'my third blog',body:'Lorem ipsum',author:'jakes',id:3}
     ])
     
+    const handleDelete=(id)=>{
+        const newblogs=blogs.filter(blog=>blog.id !==id)
+        setBlogs(newblogs)
+    }
+    
         
   return (
     <div className='home'>
         
-        <BlogList blogs={blogs} title='All Blogs'/>
+        <BlogList blogs={blogs} title='All Blogs' handleDelete={handleDelete}/>
         
-        <BlogList blogs={blogs.filter((blog)=>blog.author==='jakes')} title="Mario's Blog"/>
+        <BlogList blogs={blogs.filter((blog)=>blog.author==='jakes')} handleDelete={handleDelete} title="Mario's Blog"/>
     
     </div>
   )
