@@ -1,0 +1,7 @@
+{
+    "blogs": [
+        { "title": "my first blog", "body": "Lorem ipsum", "author": "jakes", "id": 1 },
+        { "title": "my second blog", "body": "Lorem ipsum", "author": "Jared", "id": 2 },
+        { "title": "my third blog", "body": "Lorem ipsum", "author": "jakes", "id": 3 }
+    ]
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { useState } from 'react'
 import BlogList from './BlogList'
 
@@ -14,6 +15,10 @@ export default function Home() {
         setBlogs(newblogs)
     }
     
+    useEffect(()=>{
+        console.log('hello')
+        console.log(blogs)
+    })
         
   return (
     <div className='home'>
