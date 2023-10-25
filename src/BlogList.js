@@ -15,7 +15,7 @@ export default function BlogList({blogs,title}) {
             
                 <Link to={`blogs/${blog.id}`}>
                     <h2>{blog.title}</h2>
-                    <p>Written by {blog.author}</p>
+                    <small>Written by {blog.author}</small>
                 </Link>
                 
             </div>
