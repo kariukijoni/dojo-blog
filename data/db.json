@@ -1,8 +1,51 @@
 {
-    "blogs": [
-        { "title": "my first blog", "body": "Lorem ipsum Welcome to the tutorial! We'll be building a small, but feature-rich app that lets you keep track of your contacts. We expect it to take between 30-60m if you're following along.", "author": "jakes", "id": 1 },
-        { "title": "my second blog", "body": "Lorem ipsum tries", "author": "Jared", "id": 2 },
-        { "title": "my third blog", "body": "Lorem ipsum", "author": "jakes", "id": 3 },
-        { "title": "my forth blog", "body": "Lorem ipsum", "author": "paps", "id": 4 }
+    "blogs": [{
+            "title": "my first blog",
+            "body": "Lorem ipsum Welcome to the tutorial! We'll be building a small, but feature-rich app that lets you keep track of your contacts. We expect it to take between 30-60m if you're following along.",
+            "author": "jakes",
+            "id": 1
+        },
+        {
+            "title": "my second blog",
+            "body": "Lorem ipsum tries",
+            "author": "Jared",
+            "id": 2
+        },
+        {
+            "title": "my third blog",
+            "body": "Lorem ipsum",
+            "author": "jakes",
+            "id": 3
+        },
+        {
+            "title": "my forth blog",
+            "body": "Lorem ipsum",
+            "author": "paps",
+            "id": 4
+        },
+        {
+            "title": "fifth blog",
+            "body": "this is the fifth blog",
+            "author": "jared",
+            "id": 5
+        },
+        {
+            "title": "sixth blog",
+            "body": "ghhh",
+            "author": "paps",
+            "id": 6
+        },
+        {
+            "title": "seventh blog",
+            "body": "ghhh",
+            "author": "paps",
+            "id": 7
+        },
+        {
+            "title": "eigth blog",
+            "body": "ghhh",
+            "author": "paps",
+            "id": 8
+        }
     ]
 }

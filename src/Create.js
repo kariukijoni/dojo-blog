@@ -5,13 +5,33 @@ export default function Create() {
     const [title,setTitle]=useState('')
     const [body,setBody]=useState('')
     const [author,setAuthor]=useState('')
+    const[isPending,setIsPending]=useState(false)
+    
+    const handleSubmit =(e)=>{
+        e.preventDefault();
+        
+        const blog={title,body,author}
+        
+        setIsPending(true)
+        
+        // console.log(blog)
+        
+        fetch('http://localhost:8003/blogs',{
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify(blog)
+        }).then(()=>{
+            console.log('New blog added!')
+            setIsPending(false)
+        })
+    }
     
   return (
     <div className='create'>
         <h3>
             Add new blog
         </h3>
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Blog title:</label>
             <input type='text' value={title} onChange={(e)=>setTitle(e.target.value)} required/>
             <label>Blog body:</label>
@@ -23,7 +43,10 @@ export default function Create() {
                 <option value='jared'>jared</option>
                 <option value='paps'>paps</option>
             </select>
-            <button>Add Blog</button>
+            
+            { !isPending && <button>Add Blog</button> }
+            { isPending && <button disabled>Adding Blog...</button> }
+            
             <p>{ title }</p>
             <p>{ body }</p>
             <p>{ author }</p>
