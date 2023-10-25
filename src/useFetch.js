@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { useState,useEffect } from 'react';
 
 export default function useFetch(url) {
@@ -8,8 +8,11 @@ export default function useFetch(url) {
     // const url='http://localhost:8003/blogs'
        
     useEffect(() => {
+        
+        const abortCont=new AbortController();
+        
         setTimeout(()=>{
-            fetch(url)
+            fetch(url,{signal:abortCont.signal})
              .then(res => {
                  if(!res.ok)
                  {
@@ -24,10 +27,18 @@ export default function useFetch(url) {
             setError(null)
             })
                 .catch(err=>{
-                    setIsPending(false)
-                    setError(err.message)
+                    if(err.name === 'AbortError'){
+                        console.log('fetch aborted')
+                    }else{
+                        
+                        setIsPending(false)
+                        setError(err.message)
+                    }
          })
         },1000)
+        
+        return()=> abortCont.abort()
+        
     }, [url]);
   return {data,isPending,error}
   

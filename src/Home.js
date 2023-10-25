@@ -1,6 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
 import BlogList from './BlogList'
 import 'font-awesome/css/font-awesome.min.css';
 import useFetch from './useFetch';
