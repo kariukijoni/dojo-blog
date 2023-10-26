@@ -33,26 +33,26 @@ export default function Create() {
     }
     
   return (
-    <div className='create'>
+    <div className='create container'>
         <h3>
             Add new blog
         </h3>
         <form onSubmit={handleSubmit}>
             <label>Blog title:</label>
-            <input type='text' value={title} onChange={(e)=>setTitle(e.target.value)} required/>
+            <input type='text' className='form-control' value={title} onChange={(e)=>setTitle(e.target.value)} required/>
             <label>Blog body:</label>
-            <textarea value={body} onChange={(e)=>setBody(e.target.value)} required>
+            <textarea value={body} className='form-control' onChange={(e)=>setBody(e.target.value)} required>
             </textarea>
             <label>Blog author:</label>
-            <select value={author} onChange={(e)=>setAuthor(e.target.value)} required>
+            <select value={author} className='form-control' onChange={(e)=>setAuthor(e.target.value)} required>
                 <option value=''>--please select--</option>
                 <option value='jakes'>jakes</option>
                 <option value='jared'>jared</option>
                 <option value='paps'>paps</option>
             </select>
             
-            { !isPending && <button>Add Blog</button> }
-            { isPending && <button disabled>Adding Blog...</button> }
+            { !isPending && <button className='btn btn-sm btn-info mt-2'>Add Blog</button> }
+            { isPending && <button className='btn btn-sm btn-success mt-2' disabled>Adding Blog...</button> }
             
         </form>
     </div>

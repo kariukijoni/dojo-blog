@@ -19,18 +19,20 @@ export default function BlogDetails() {
     }
     
   return (
-    <div className='blog-details'>
+    <div className='blog-details container'>
         {/* <h2>Blog details- {id}</h2> */}
         
         {isPending &&<i className="fa fa-spinner fa-spin"> </i>}
         {error && <div>{error}</div>}
         {blog && (
-            <article>
-                <h2>{blog.title}</h2>
-                <small>Written by {blog.author}</small>
-                <div>{blog.body}</div>
-                <button onClick={handleClick}>Delete</button>
-            </article>
+            <div className='card border-dark mt-2'>                
+                <article className='ml-2'>
+                    <h2>{blog.title}</h2>
+                    <small>Written by <b>{blog.author}</b></small>
+                    <div>{blog.body}</div>
+                    <button className='btn btn-sm btn-outline-danger mb-1' onClick={handleClick}>Delete</button>
+                </article>
+            </div>
             
         )}
         
