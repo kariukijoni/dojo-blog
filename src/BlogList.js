@@ -1,10 +1,27 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom';
+import BarChart from './components/BarChart';
+import useFetch from './useFetch';
 
 export default function BlogList({blogs,title}) {
     
     // const blogs=props.blogs
     // const title=props.title
+    // const {data:blogsData}=useFetch('http://localhost:8003/blogs')
+    // console.log(blogs)
+    
+    
+    // blogs 
+    const [blogsData,setBlogsData]=useState({
+      labels: blogs.map((data)=>data.author) ,
+      datasets: [{
+        label: "Authors",
+        data: blogs.map((data)=>data.author.length),
+        fill: true, 
+        backgroundColor: "rgba(6, 156,51, .3)", 
+        borderColor: "#02b844", 
+      }]
+    })
     
     // pagination
     const [currentPage,setCurrentPage]=useState(1)
@@ -53,7 +70,11 @@ export default function BlogList({blogs,title}) {
             ))}
         </div>
         <div className='col-md-4'>
-                    kkkk
+        
+        {/* chart */}
+                    <BarChart chartData={blogsData}/>
+                    
+                    
         </div>  
     </div>
     
